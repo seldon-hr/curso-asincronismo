@@ -1,0 +1,14 @@
+{
+  "name": "curso-asincronismo",
+  "version": "1.0.0",
+  "description": "Curso Asincronismo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "async-await"
+  ],
+  "author": "Dan Romer daanmaro99june@gmail.com",
+  "license": "MIT"
+}
