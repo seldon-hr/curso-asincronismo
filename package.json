@@ -10,5 +10,8 @@
     "async-await"
   ],
   "author": "Dan Romer daanmaro99june@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
 }
