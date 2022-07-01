@@ -23,13 +23,13 @@ function fetchData(urlApi, callback) { // Función que genera la conexión, reci
                                         // Con el operador 'new' creamos una nueva instancia, ya que es un constructor
 
     xhttp.open('GET', urlApi, true); //Abrimos una nueva conexión, con método para obener 'GET', la urlAPI, y true para que sea asincronismo.
-    xhttp.onreadystatechange = function (event) {
-        if (xhttp.readyState === 4){
-            if(xhttp.status === 200) {
-                callback(null, JSON.parse(xhttp.responseText))
+    xhttp.onreadystatechange = function (event) { // Al momento de que est suceda, escuchamos el estado.
+        if (xhttp.readyState === 4){ //Esperamos que nuestro estado sea igual a 4 (Se completo la llamada)
+            if(xhttp.status === 200) { // Estado anidado que sea 200 (Solicitud correcta)
+                callback(null, JSON.parse(xhttp.responseText))  //Retornamos callback null en error y convertimos datos a JSON con 'parse'
             } else {
-                const error = new Error('Error' + urlApi);
-                return callback(error, null);
+                const error = new Error('Error' + urlApi);  //Recolectamos el error, + urlApi
+                return callback(error, null); //Retornamos callback con el error y null(para los datos)
             }
         }
         } 
