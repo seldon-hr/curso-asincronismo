@@ -25,6 +25,8 @@ fetchData(`${API}/people/`, function(error1, data1){
     Hasta aquí imprime la info general de la sección people, no obostante,
     solo se accede a un personaje de de people si accedo con la url exacta como parámetro de fetchData,
     no si lo selecciono de la llamaa en el console.logg.
+
+    Check doc about fakeapiplatzi to understant better how works it
     
     
     
