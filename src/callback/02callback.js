@@ -18,8 +18,15 @@ function fetchData(urlAPI, callback) {
     xhttp.send();
 }
 
-fetchData(`${API}/characters`, function(error1, data1){
+fetchData(`${API}/people`, function(error1, data1){
     if (error1) return console.error(error1);
-    fetchData(`${API}/`)
+    fetchData(`${API}/people/${data1[0].id}`, function(error2, data2){
+        if (error2) return console.error(error2);
+        fetchData(`${API}/`, function(error3, data3){
+            if (error3) return console.error(error3);
             console.log(data1.id[1]);
+            console.log(data2.title);
+            console.log(data3.name);
+        })
+    })
 })
