@@ -18,10 +18,15 @@ function fetchData(urlAPI, callback) {
     xhttp.send();
 }
 
-fetchData(`${API}/people/`, function(error1, data1){
+fetchData(`${API}/people/1`, function(error1, data1){
     if (error1) return console.error(error1);
-    console.log(data1.[1]);
+    console.log(data1.name);
 
+    fetchData(`${API}/people/${data1}`, function (error2, data2) {
+        if (error2) return console.error(error2);
+        console.log(data2.birth_year);
+ 
+    })
     /*
     Hasta aquí imprime la info general de la sección people, no obostante,
     solo se accede a un personaje de de people si accedo con la url exacta como parámetro de fetchData,
@@ -30,17 +35,17 @@ fetchData(`${API}/people/`, function(error1, data1){
     Check doc about fakeapiplatzi to understant better how works it
     
     
-    Ahora veo que el problema con llamar a 
+    Ahora veo que el problema con llamar a un personaje puede ser que estos no poseen un id como propiedad
+    como ocurre con fakeplatziapi, y se llaman por una url exacta, por eso si tengo la url exacta ahora si
+    puedo llamar a sus propiedades por ejemplo de luke, mientras en fakeapiplatzi son propiedades las qu llamo
+    
+    En la segunda llamada intente aunar con la variable que llamo, pero esta no me entrega, checar como se lee.
+
     
     */
 
 
 
-    // fetchData(`${API}/people`, function (error2, data2) {
-    //     if (error2) return console.error(error2);
-    //     console.log(data2.name);
-
-    // })
 
 
 
