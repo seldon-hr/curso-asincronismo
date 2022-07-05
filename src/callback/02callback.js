@@ -20,7 +20,8 @@ function fetchData(urlAPI, callback) {
 
 fetchData(`${API}/people/`, function(error1, data1){
     if (error1) return console.error(error1);
-    console.log(data1);
+    console.log(data1.[1]);
+
     /*
     Hasta aquí imprime la info general de la sección people, no obostante,
     solo se accede a un personaje de de people si accedo con la url exacta como parámetro de fetchData,
@@ -29,13 +30,22 @@ fetchData(`${API}/people/`, function(error1, data1){
     Check doc about fakeapiplatzi to understant better how works it
     
     
+    Ahora veo que el problema con llamar a 
     
     */
-    fetchData(`${API}/people/${data1[0].id}`, function (error2, data2) {
-        if (error2) return console.error(error2);
-        console.log(data2.name);
 
-    })
+
+
+    // fetchData(`${API}/people`, function (error2, data2) {
+    //     if (error2) return console.error(error2);
+    //     console.log(data2.name);
+
+    // })
+
+
+
+
+
     // fetchData(`${API}/people/${data1[0].id}`, function(error2, data2){
     //     if (error2) return console.error(error2);
     //     fetchData(`${API}/`, function(error3, data3){
