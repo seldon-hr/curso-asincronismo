@@ -58,6 +58,8 @@ fetchData(`${API}/people/1`, function(error1, data1){
     a toda las personas, para un personaje tenemos que añadirlo dentro de esta url así, API/people/1
       Este resultado muestra al personaje de Luke.
 
+    Aquí no debería hacer otra llamada así como esta star wars api, solo cambiar los parámetros a menos que busque
+    algo dentro de otra categoría. ESto claro en el último aspecto dónde vi uso de misma data diferente propiedad.
     
     */
 
