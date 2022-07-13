@@ -24,10 +24,15 @@ fetchData(`${API}/people/1`, function(error1, data1){
     fetchData(`${API}/people/1`, function (error2, data2) {
         if (error2) return console.error(error2);
         
-        fetchData(`${API}/people/1`, function (error3))
+        // fetchData(`${API}/people/1`, function (error3, data3) {
+        //     if (error3) return console.error(error3);
+            
+            console.log(data1.name);
+            console.log(data2.birth_year);
+            console.log(data1.films)
+
+        // })
         
-        console.log(data1.url);
-        console.log(data2.birth_year);
  
     })
     /*
@@ -52,6 +57,8 @@ fetchData(`${API}/people/1`, function(error1, data1){
     tiene id como propiedad de personajesm, se divide por url, por ejemplo API/people, es la ruta para acceder
     a toda las personas, para un personaje tenemos que añadirlo dentro de esta url así, API/people/1
       Este resultado muestra al personaje de Luke.
+
+    
     */
 
 
