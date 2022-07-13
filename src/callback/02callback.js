@@ -20,10 +20,13 @@ function fetchData(urlAPI, callback) {
 
 fetchData(`${API}/people/1`, function(error1, data1){
     if (error1) return console.error(error1);
-    console.log(data1.name);
-
-    fetchData(`${API}/people/${data1}`, function (error2, data2) {
+    
+    fetchData(`${API}/people/1`, function (error2, data2) {
         if (error2) return console.error(error2);
+        
+        fetchData(`${API}/people/1`, function (error3))
+        
+        console.log(data1.url);
         console.log(data2.birth_year);
  
     })
@@ -37,11 +40,18 @@ fetchData(`${API}/people/1`, function(error1, data1){
     
     Ahora veo que el problema con llamar a un personaje puede ser que estos no poseen un id como propiedad
     como ocurre con fakeplatziapi, y se llaman por una url exacta, por eso si tengo la url exacta ahora si
-    puedo llamar a sus propiedades por ejemplo de luke, mientras en fakeapiplatzi son propiedades las qu llamo
+    puedo llamar a sus propiedades por ejemplo de luke, mientras en fakeapiplatzi son propiedades las que llamo
     
     En la segunda llamada intente aunar con la variable que llamo, pero esta no me entrega, checar como se lee.
 
     
+    Comenentario final
+    La forma en la cual uno puede acceder a la información depende de cómo esta organizada la estructura de la API
+    como es que esta fue puesta sus propiedades y objetos, si posseen un id, esto facilita la selección como
+    pasa en 'fakeapiplatzi' cada prodcucto contiene un id, lo contrario ocurré con 'star wars api', esta no
+    tiene id como propiedad de personajesm, se divide por url, por ejemplo API/people, es la ruta para acceder
+    a toda las personas, para un personaje tenemos que añadirlo dentro de esta url así, API/people/1
+      Este resultado muestra al personaje de Luke.
     */
 
 
