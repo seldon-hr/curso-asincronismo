@@ -36,17 +36,21 @@ function fetchData(urlApi, callback) { // Función que genera la conexión, reci
     xhttp.send();
 }
 
-fetchData(`${API}/products`, function(error1, data1){
-    if (error1) return console.error(error1);
-    console.log(data1[0]);
 
-    // fetchData(`${API}/products/${data1[0].id}`, function(error2, data2) {
-    //     if(error2) return console.error(error2);
-    //     fetchData(`${API}/categories/${data2?.category?.id}`, function (error3, data3) {
-    //         if(error3) return console.error(error3);
-    //         console.log(data1[0]);
-    //         console.log(data2.title);
-    //         console.log(data3.name);
-    //     })
-    // })
+// Función fetchData() pasandole como argumentos la variable API concatenada, con la cadena 'products' para acceder a la URL de la API, 
+// con una función anónima que recibe dos parámetros (un objeto de error y un objeto que almacena los objetos traidos por la API)
+fetchData(`${API}/products`, function(error1, data1){
+    // Validación en que exista un error si es así, se interrumpe el proceso.
+    if (error1) return console.error(error1);
+
+// Se invoca de nuevo a la función para acceder a un objeto puntual del arreglo de data1, señalandoló como uno en particular para que esa data se guarde en otro objeto.
+    fetchData(`${API}/products/${data1[0].id}`, function(error2, data2) {
+        if(error2) return console.error(error2);
+        fetchData(`${API}/categories/${data2?.category?.id}`, function (error3, data3) {
+            if(error3) return console.error(error3);
+            console.log(data1[0]);
+            console.log(data2.title);
+            console.log(data3.name);
+        })
+    })
 })

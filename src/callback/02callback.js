@@ -18,6 +18,8 @@ function fetchData(urlAPI, callback) {
     xhttp.send();
 }
 
+
+
 fetchData(`${API}/people/1`, function(error1, data1){
     if (error1) return console.error(error1);
     
@@ -29,12 +31,13 @@ fetchData(`${API}/people/1`, function(error1, data1){
             
             console.log(data1.name);
             console.log(data2.birth_year);
-            console.log(data1.films)
+            console.log(data1.starships)
 
         // })
         
  
     })
+})
     /*
     Hasta aquí imprime la info general de la sección people, no obostante,
     solo se accede a un personaje de de people si accedo con la url exacta como parámetro de fetchData,
@@ -62,22 +65,3 @@ fetchData(`${API}/people/1`, function(error1, data1){
     algo dentro de otra categoría. Esto claro en el último aspecto dónde vi uso de misma data diferente propiedad.
     
     */
-
-
-
-
-
-
-
-
-    // fetchData(`${API}/people/${data1[0].id}`, function(error2, data2){
-    //     if (error2) return console.error(error2);
-    //     fetchData(`${API}/`, function(error3, data3){
-    //         if (error3) return console.error(error3);
-    //         console.log(data1);
-    //         console.log(data2.title);
-    //         console.log(data3.name);
-    //     })
-    // })
-    
-})
