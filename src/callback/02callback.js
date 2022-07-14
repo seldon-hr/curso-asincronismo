@@ -53,13 +53,13 @@ fetchData(`${API}/people/1`, function(error1, data1){
     Comenentario final
     La forma en la cual uno puede acceder a la información depende de cómo esta organizada la estructura de la API
     como es que esta fue puesta sus propiedades y objetos, si posseen un id, esto facilita la selección como
-    pasa en 'fakeapiplatzi' cada prodcucto contiene un id, lo contrario ocurré con 'star wars api', esta no
-    tiene id como propiedad de personajesm, se divide por url, por ejemplo API/people, es la ruta para acceder
+    pasa en 'fakeapiplatzi' cada producto contiene un id, lo contrario ocurré con 'star wars api', esta no
+    tiene id como propiedad de personajes, se divide por url, por ejemplo API/people, es la ruta para acceder
     a toda las personas, para un personaje tenemos que añadirlo dentro de esta url así, API/people/1
       Este resultado muestra al personaje de Luke.
 
     Aquí no debería hacer otra llamada así como esta star wars api, solo cambiar los parámetros a menos que busque
-    algo dentro de otra categoría. ESto claro en el último aspecto dónde vi uso de misma data diferente propiedad.
+    algo dentro de otra categoría. Esto claro en el último aspecto dónde vi uso de misma data diferente propiedad.
     
     */
 
