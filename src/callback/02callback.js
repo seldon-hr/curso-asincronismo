@@ -38,6 +38,21 @@ fetchData(`${API}/people/1`, function(error1, data1){
  
     })
 })
+ //this case is for the backend not useful in client.
+function refresh () {
+    fetchData(`${API}/people/1`, function(error1, data1){
+        if (error1) return console.error(error1);
+        const character = document.querySelector('.starwarsCharacter')
+        character.innerHTML = data1.name;
+    })
+}
+
+refresh();
+
+
+
+
+
     /*
     Hasta aquí imprime la info general de la sección people, no obostante,
     solo se accede a un personaje de de people si accedo con la url exacta como parámetro de fetchData,
