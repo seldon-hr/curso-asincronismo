@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="callback-btn">Click here</button>
+    <script>
+        document.querySelector('#callback-btn')
+            .addEventListener('click', messageForConfirmClick);
+            
+        function messageForConfirmClick() {
+                console.log('User has clicked on the button');
+        }
+
+
+
+            /* Así que selecionamos el botón primerocon su id, y luego agregamos
+               un detector de eventos con el método 'addEventListener. Se necesitan
+               2 parámetros: 
+                El primero es su tipo, 'click', y el segundo parámetro es una función
+                callback, que registra el mensaje cuando se hace click en el botón 
+                
+               Aunque cambiemos la función y la tengamos declarada sigue siendo un callback, la otra función
+               la que la pasa por su parámetros es una de High-order función 
+                
+                
+                */
+
+
+    </script>
+</body>
+</html>
