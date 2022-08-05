@@ -3,7 +3,7 @@ const API ='https://api.escuelajs.co/api/v1';
 
 function postData(urlApi, data) {
     const response = fetch(urlApi, {
-        method: 'POST',
+        method: 'PUT',
         mode: 'cors',
         credentials: 'same-origin',
         headers: {
@@ -16,13 +16,13 @@ function postData(urlApi, data) {
 
 
 const data = {
-    "title": "228",
+    "title": "New Product Proff",
     "price": 228,
     "description": "I am the product 228",
     "categoryId": 1,
     "images": ["https://placeimg.com/640/480/any"]
 }
 
-postData(`${API}/products`, data)
+postData(`${API}/products/240`, data)
     .then(response => response.json())
     .then(data => console.log(data));
