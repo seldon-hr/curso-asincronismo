@@ -6,6 +6,16 @@
             // Uso de if ternario
             (true)
                 ? setTimeout(()=> resolve('Async!!'), 2000) // Si se cumple
-                : reject(New Error('Error!')) //Fail
+                : reject(new Error('Error!')) //Fail
         });
     }
+
+    const anotherFn = async () => {
+        const something = await fnAsync();
+        console.log(something);
+        console.log('Houdy');
+    }
+
+    console.log('Before');
+    anotherFn();
+    console.log('After');
