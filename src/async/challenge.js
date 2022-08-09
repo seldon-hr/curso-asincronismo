@@ -29,13 +29,15 @@ const anotherFunction = async (urlApi) => {
             almacenada en urlApi, pero aquí ya le estamos agregando el endpoint. /products, Así obtenemos 
             el array con los productos.           
         */
-        const products = await fetcData(`${urlApi}/products`);
-        
-        const product = await fetcData(`${urlApi}/products/${products[0].id}`);
-        const category = await fetcData(`${urlApi}/categories/${product.category.id}`);
+        const products = await fetcData(`${urlApi}/products`); // Consumimos la api con todos los productos
 
-        console.log(products);
+        const product = await fetcData(`${urlApi}/products/${products[0].id}`); //Treamoes el obj de un solo producto 
+        const category = await fetcData(`${urlApi}/categories/${product.category.id}`); //Treamos el obj category, dentro del obj producto por el id.
+
+        // console.log(products);
+        console.log(products[0].title);
         console.log(product.title);
+        // console.log(product.category.name)  Proof
         console.log(category.name);
 
     } catch (error) {
